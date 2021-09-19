@@ -1,1 +1,3 @@
-<h1>books/index.html</h1>
+<h1>index</h1>
+<%= @user.name %>
+<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
