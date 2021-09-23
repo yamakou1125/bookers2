@@ -6,6 +6,27 @@
         
         <%= form_with model:@user, local:true do |f| %>
         <form>
+          
+        <% if @user.errors.any? %>
+        <div class=errors>
+          <% if @user.errors.count == 1 %>
+          <h3><%= @user.errors.count %> error prohibited this obj from being saved:</h3>
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+          <% else %>
+          <h3><%= @user.errors.count %> errors prohibited this obj from being saved:</h3>
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+          <% end %>
+        </div>
+        <% end %>
+          
           <div class="form-group">
             <p>Name</p>
             <%= f.text_field :name, class: "form-control" %>
