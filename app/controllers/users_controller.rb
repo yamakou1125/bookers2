@@ -13,6 +13,11 @@ class UsersController < ApplicationController
 
   def edit
     @user = current_user
+    if @user == current_user
+    render "edit"
+    else
+    redirect_to new_user_session_path
+    end
   end
   
   def update
@@ -21,7 +26,7 @@ class UsersController < ApplicationController
     redirect_to user_path(@user.id), notice: "You have updated user successfully."
    else
      render :edit
-    end
+   end
   end
   
   
