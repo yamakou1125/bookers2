@@ -5,7 +5,7 @@
         <h2>User info</h2>
         
         <%= form_with model:@user, local:true do |f| %>
-        <form>
+        
           
         <% if @user.errors.any? %>
         <div class=errors>
@@ -45,7 +45,7 @@
           <div class="form-group">
             <%= f.submit 'Update User', class:'btn btn-secondary' %>
           </div>
-        </form>
+        
         <% end %>
       </div>
     </div>
